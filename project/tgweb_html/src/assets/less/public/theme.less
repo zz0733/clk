@@ -1,0 +1,658 @@
+.theme(@main-color:#4d8ffa ,@main-brder-color:#4d8ffa ) {
+    
+    //  公共部分
+     .bg-color{
+         background: @main-color !important;
+     }
+     .bg-color-active{
+        background: @main-color !important;
+        color:#fff !important;
+        div{
+            color:#fff !important;
+        }
+     }
+     .text-color{
+        color: @main-color !important;
+     }
+
+     .border-1-color{
+        border-bottom: 1px solid @main-color !important;
+     }
+     .border-2-color{
+        border-bottom: 2px solid @main-color !important;
+     }
+     .border-color{
+         border:  1px solid @main-color !important;
+     }
+     .border-font-color{
+        border:  1px solid @main-color !important;
+        color: @main-color !important;
+    }
+
+
+    .cube-switch .cube-switch-input:checked + .cube-switch-ui{
+        border-color: @main-color !important;
+        background-color: @main-color !important;
+    }
+
+
+    //  公共选择框
+    // .cube-picker-confirm{
+    //     color: @main-color !important;
+    // }
+
+
+
+    
+     @header-height:0.88rem;
+     @main-lottery-border-color:rgba(241,241,241,.6);
+     @main-lottery-border-color2:rgba(241,241,241,.6);
+     // 动画类名
+     @main-time:.3s;
+     .keyframes(@start,@end,) { 
+         @keyframes animateOut {
+           0% {transform: translate3d(@start,0,0);}
+           100%{transform: translate3d(@end, 0, 0);}
+         }          
+     }
+     .animation(@n,@t,@fn,@i,@dur){
+         animation: @n @t @fn @i @dur;
+         -webkit-animation: @n @t @fn @i @dur;
+         -o-animation: @n @t @fn @i @dur;
+         -moz-animation: @n @t @fn @i @dur;
+     }
+       
+
+    //   lottery.less
+     .hall-container-header{
+        width: 100%;
+        height: .70rem;
+        padding-top: 0;
+        .van-tabs__wrap{
+          height: .70rem;
+        }
+        .van-tabs__nav--line{
+            padding-bottom: 0;
+            padding-left: .2rem;
+            .van-tabs__line{
+              background:@main-color;
+              bottom: 0;
+            }
+        }
+        .van-tabs__wrap--scrollable,.van-tab{
+          flex: 0;
+          min-width:auto;
+          font-size: .32rem;
+          span{
+            // width: 1.27rem;
+            padding: 0 .12rem;
+            height: .70rem;
+            line-height:.70rem;   
+            border-radius:.27rem;   
+          }
+        }
+        .van-tab--active{
+          color:@main-brder-color;
+        }
+        &.luZhuTitle{
+            height: .75rem;
+            .van-tabs__wrap{
+                height: .75rem;
+                line-height: .75rem;
+            }
+            
+            .van-tabs__wrap--scrollable,.van-tab{
+              font-size: .32rem;
+              flex: 1;
+              span{
+                padding: 0 .12rem;
+                height: .75rem;
+                line-height: .75rem; 
+                color: #333;          
+              }
+            }
+            .van-tabs__line{
+                height: 2px;
+                // display: none;
+            }
+            [class*=van-hairline]::after{
+                border: 0;
+            }
+            .van-tabs__nav--line{
+                padding-left: 0;
+            }
+        }
+        &.heXiao-van{
+            .van-tabs__wrap--scrollable,.van-tab{
+                span{
+                    color: #666;
+                }
+            }           
+        }
+        &.dianZi{
+            .van-tab{
+                font-size: .28rem;   
+            } 
+        }
+    }
+    
+    //彩票页导航
+    .betArea-pubicNav{
+        height: .8rem;
+        .van-tabs--line .van-tabs__wrap{
+            height: .8rem;
+        }
+        .van-tabs__nav--line{
+            padding-bottom: 0;
+            padding-left: .16rem;
+            .van-tabs__line{
+                display: none;
+            }
+        }
+        .van-tabs__wrap--scrollable .van-tab{
+            flex: 0;
+            min-width:auto;
+            display: flex;
+            align-items: center;
+            font-size: .32rem;
+            line-height: .5rem;
+            padding: 0;
+            span{
+                padding: 0;
+                width: auto;
+               height: .64rem;
+                padding-left: .24rem;
+               padding-right: .24rem;
+               line-height: .64rem;
+               border-radius: .48rem;
+            }
+        }
+        .van-tab--active{
+            span{
+            color:#fff;
+            background:@main-color;  
+            }
+    
+        }
+        [class*=van-hairline]::after{
+            border:0;
+        }
+        &.triangle{
+            .top{
+                z-index: 2;
+                position: relative;
+                width:100%;
+                display: flex;
+                border-bottom: 1px solid @main-lottery-border-color;
+            .triangle-van{
+                padding-top:0;
+                width: 88%;
+            }
+            .ico{
+                cursor: pointer;
+                height: .8rem;
+                width: 12%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #fff;
+                div{
+                width: 0;
+                height: 0;
+                border-left: .13rem solid transparent;
+                border-right: .13rem solid transparent;
+                border-top: .19rem solid @main-brder-color; 
+                &.active{
+                    border-top: 0; 
+                    border-bottom: .19rem solid @main-brder-color;   
+                }       
+                }
+            }      
+            }
+        }
+        &.pcDdZhuShi{
+            .van-tab {
+                height: 0.8rem;
+                flex: 0;
+                min-width:auto;
+                padding: .08rem 0 0 0;
+                font-size: .32rem;
+                line-height: .64rem;
+                span{
+                  // width: 1.27rem;
+                  padding: 0 .23rem;
+                  height: 0.64rem;
+                  line-height: .64rem;   
+                  border-radius: .48rem;  
+                }
+            }
+            .van-ellipsis{
+              height: 0.64rem;
+              line-height: .64rem; 
+              border-radius: .27rem;
+            }
+        }  
+    }
+        
+      //传统彩票封盘
+      .lottery-close-mask{
+        position: absolute;
+        z-index: 100;
+        top:0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,.1);
+        display: flex;
+        // align-items: center;
+        justify-content: center;
+      }
+      .closeFix{
+        position: absolute;
+        z-index: 99;
+        left: 50%;
+        margin-left: -.9rem;
+        top: 58%;
+        display: inline-block;
+        width: 1.8rem;
+        height: 1.00rem;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        font-size: .44rem;
+        line-height: 1.00rem;
+        border-radius: .10rem;
+        text-align: center;
+      }
+      //滚动垫片1
+      .lottery-gasket{
+        height: 1.88rem;
+        width: 100%;
+      }
+      .lottery-gasket-liuhe{
+        height: 1.88rem;
+        width: 100%;
+      }
+       //滚动垫片2
+      .lottery-left-nav-gasket{
+        height: .88rem;
+        width: 100%;
+      }
+      //大厅
+      .hall-gasket{
+        height: .9rem;
+      }
+      
+    
+      //全局选择框
+    
+      //所有彩票样式
+      .container{
+        //  padding-top: 0.88rem;
+        -moz-transition: all @main-time ease-out 0s;
+        -webkit-transition: all @main-time ease-out 0s;
+        -o-transition: all @main-time ease-out 0s;
+        transition: all @main-time ease-out 0s; 
+       
+        //  &.active{
+        //     transform: translate3d(200px,0,0);
+        //  }
+        .betArea-decial-box{      
+           position: relative;
+          .lottery-cont{
+            overflow: auto;  
+            -webkit-overflow-scrolling: touch;
+            position: static;
+            overflow-y:scroll;          
+            .list-tap{
+                display: flex;
+                height: .7rem;
+                div{
+                    flex: 1;
+                    font-size: .3rem;
+                    color:#666;
+                    line-height: .7rem;
+                    height: .7rem;
+                    text-align: center;
+                    border-bottom:2px solid @main-lottery-border-color;
+                    &.active{
+                        border-bottom:2px solid @main-brder-color;
+                        color:@main-brder-color;
+                    }
+                }
+            }          
+            .wrap{
+              position: relative;
+              .list{
+                .lottery-title{
+                    color: #555555;
+                    font-size: .32rem;
+                    background: #F9F9F9;
+                    line-height: .7rem;
+                    height: .7rem;
+                    padding-left: .2rem;
+                }
+                .lottery-ul{
+                    width: 100%;
+                    padding: .22rem 0; 
+                    padding-bottom: 0;
+                    border-top: 1px solid @main-lottery-border-color;
+                    border-bottom: 1px solid @main-lottery-border-color;                
+                    .lottery-item{
+                        text-align: center;
+                        display: inline-block;
+                        width: 20%;
+                        min-width: 20%;
+                        max-width: 20%;  
+                        margin-bottom: .22rem;   
+                        // height: 1.62rem;                   
+                        .ball{
+                            width: .84rem;
+                            height: .84rem;
+                            border-radius: 50%;
+                            text-align: center;
+                            line-height: .84rem; 
+                            border:1px solid @main-lottery-border-color2;
+                            color: #444444;
+                            font-size: .34rem;
+                            margin: 0 auto;
+                            &.active{
+                                background: @main-color;
+                                border:0;
+                                // border:1px solid @main-brder-color;
+                                color:#fff;
+                            }
+                        }
+                        .odd{
+                            font-size: .3rem;
+                            color:#999999;
+                            padding-top: .2rem;
+                            &.active{
+                              color:@main-brder-color;   
+                            }                                
+                        }
+                    }
+                    //已用
+                    .threeSquare{
+                        width: 33.3333%;
+                        min-width: 33.3333%;
+                        max-width: 33.3333%; 
+                        div.ball{
+                            width: 1.9rem;
+                            height: .96rem;
+                            border-radius:.1rem;
+                            font-size: .34rem;
+                        } 
+                    }                
+                    //已用
+                    .fourSquare{
+                        width: 25%;
+                        min-width: 25%;
+                        max-width: 25%; 
+                        div.ball{
+                            width: 1.25rem;
+                            height: .76rem;
+                            line-height:.76rem; 
+                            border-radius:.1rem;
+                            font-size: .34rem;
+                        } 
+                    }
+                    //已用
+                    .fiveSquare{
+                        width: 20%;
+                        min-width: 20%;
+                        max-width: 20%; 
+                        div.ball{
+                            width: 1rem;
+                            height: .76rem;
+                            line-height:.76rem; 
+                            border-radius:.1rem;
+                            font-size: .34rem;
+                        } 
+                    }
+                    //已用
+                    .sixSquare{
+                        width: 16.66%;
+                        min-width: 16.66%;
+                        max-width: 16.66%; 
+                        div.ball{
+                            width: 1rem;
+                            height: .76rem;
+                            line-height:.76rem; 
+                            border-radius:.1rem;
+                            font-size: .34rem;
+                        } 
+                    } 
+                    //没用
+                    .fourCircle{
+                        width: 25%;
+                        min-width: 25%;
+                        max-width: 25%; 
+                        div.ball{
+                            width: .84rem;
+                            height: .84rem;
+                            border-radius: 50%;
+                            text-align: center;
+                            line-height: .84rem;
+                            font-size: .34rem; 
+                        } 
+                    }
+                    //没用
+                    .fiveCircle{
+                        width: 20%;
+                        min-width: 20%;
+                        max-width: 20%; 
+                        div.ball{
+                            width: .84rem;
+                            height: .84rem;
+                            border-radius: 50%;
+                            text-align: center;
+                            line-height: .84rem; 
+                            font-size: .30rem;
+                        } 
+                    }
+                    //没用
+                    .sixCircle{
+                        width: 16.66%;
+                        min-width: 16.66%;
+                        max-width: 16.66%; 
+                        div.ball{
+                            width: .84rem;
+                            height: .84rem;
+                            border-radius: 50%;
+                            text-align: center;
+                            line-height: .84rem;
+                            font-size: .30rem; 
+                        } 
+                    }
+                    //快捷 
+                    .kuaijie{
+                        width: 20%;
+                        min-width: 20%;
+                        max-width: 20%; 
+                        div.ball{
+                            width: 1.3rem;
+                            height: .6rem;
+                            border-radius: .1rem;
+                            line-height: .6rem;
+                            border-radius: .27rem;
+                            font-size: .30rem;
+                        } 
+                    }                                                                 
+                }
+                &:last-child{
+                    .lottery-ul{
+                        border-bottom:0;
+                    }
+                }                
+              }
+            }
+          }
+        }
+      } 
+    
+      //横向滚动
+      .horizontal-scroll-list-wrap{
+        position: relative;
+        .cube-scroll-content{
+            display: inline-block;
+            .list-wrapper{
+              display: flex;
+              white-space: nowrap;
+              .list-item{
+                  display: inline-block;
+              }
+              .cube-scroll-lianMa-item{
+                padding: 0.1rem .18rem;
+                text-align: center;
+                font-size: .26rem;
+                color: #666;
+                &.active{
+                   border-bottom:2px solid @main-brder-color;
+                }
+                &.lianWei{
+                    padding: 0.1rem .25rem;
+                }
+              }
+            }
+        }
+      }  
+    
+
+
+    //   露珠
+    .select-wrap{
+        .title{
+            span{
+                &.text-color{
+                    &::after{                          
+                       border-top: .19rem solid @main-brder-color !important;  
+                    } 
+                  }
+            }
+        }
+    }
+
+    // 彩票导航
+    .triangle{
+        .bottom {
+            .bottom-nav-box {
+                ul{
+                    li{
+                        .item{
+                            &.active{
+                                background: #fff;
+                                border: 1px solid @main-brder-color;
+                                color: @main-brder-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    } 
+  
+
+    // 开奖结果
+   .lottery-result-center{
+        span{
+             background:@main-color;
+            border: 1px solid @main-brder-color;
+        }
+    }
+
+
+
+    // 个人中心
+  .personal-index,.personal{
+    input::-webkit-input-placeholder {
+        color: #888888 !important;
+        font-size: .28rem !important;
+      }
+     .row{
+         position: relative;
+         &::before{
+            content: "";
+            width: 100%;
+            height: 1px;
+            background:#f5f5f5;
+            position:absolute;
+            bottom: 0;
+            left: 0;
+         }
+         &:last-child{
+             &::before{
+                 height: 0;
+             }
+         }
+     }
+  }
+  
+   
+    nav{
+            a{
+                &.active{
+                    color: @main-color;
+                    &::after{
+                        position: absolute;
+                        content: "";
+                        bottom: -.25rem;
+                        left: 50%;
+                        -webkit-transform: translate(-50%);
+                        transform: translate(-50%);
+                        width: 1.5rem;
+                        height: 2px;
+                        background: @main-color;
+                    }
+                }
+            }
+    }
+
+    .deposit-form{
+        .van-tab--active{
+            position: relative;
+            &::after{
+                content: '';
+                width: 1rem;
+                height: 2px;
+                background: @main-color;
+                position: absolute;
+                bottom: 0;
+                left: .2rem;
+            }
+        }
+    }
+    
+    .van-tab--active {
+        .tab-title {           
+          background: @main-color !important;
+        }
+      }
+   
+ 
+    // tabs
+    .personal-index{
+     
+        .van-tabs__line{
+            background-color: @main-color;         
+        }
+        .van-tabs{
+            padding-top: 0 !important;
+            height: .8rem;
+        }
+        .van-tabs__wrap{
+            height: 0.8rem !important;
+            .van-tab{
+                line-height: 0.8rem !important;
+            }
+        }
+        .van-tab--active .tab-title{
+            color: @main-color;
+            background: transparent !important;
+        }
+    }
+
+
+  }
+
+// 夜间模式
+ 
+  

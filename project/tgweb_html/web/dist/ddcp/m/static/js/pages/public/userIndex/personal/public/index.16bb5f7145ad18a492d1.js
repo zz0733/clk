@@ -1,0 +1,2 @@
+/*! sign by h5 */
+webpackJsonp([134],{28:function(e,t,n){n("j1ja"),e.exports=n("P07a")},P07a:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o={data:function(){return{}},methods:{},components:{}};t.default=o}},[28]);

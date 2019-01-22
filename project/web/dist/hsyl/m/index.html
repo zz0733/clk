@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>花生娱乐</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=vp"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="" />
+    <script>
+      (function (doc, win) {
+        var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+        　　var clientWidth = docEl.clientWidth;
+        　　if (!clientWidth) return;
+        　　if(!clientWidth>640){
+        　　　　docEl.style.fontSize = 10 +'px';
+        　　}else{
+        　　　　docEl.style.fontSize = 10* (clientWidth / 640) + 'px';
+        　　};
+        　　docEl.style.fontSize = 100* (clientWidth / 750) + 'px';
+        };
+        if(!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        //win.addEventListener('orientationchange', (e)=>{ recalc()}) 
+        recalc();
+      })(document,window) ;
+    </script> 
+    <!-- <script src="/m/static/public/js/stomp.js"></script>    -->
+  <link href="/m/styleH5.css" rel="stylesheet"><link href="/m/static/css/pages/hsyl/index.1e9b0ab7502403f0325d9a4f2b635d1e.css" rel="stylesheet"></head>
+  <body>
+    <div id="hsylApp"></div>  
+<script type="text/javascript" src="/m/static/js/manifest.90734240e8c1f3a1832b.js"></script><script type="text/javascript" src="/m/static/js/vendor.eb4e690e324d00a71a5d.js"></script><script type="text/javascript" src="/m/static/js/pages/hsyl/index.640f8e4bfc4cb0faea31.js"></script></body>
+</html>

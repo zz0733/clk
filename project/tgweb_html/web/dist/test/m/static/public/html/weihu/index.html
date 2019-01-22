@@ -1,0 +1,75 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+    <title>站点维护中...</title>
+    <script>
+        (function (doc, win) {
+          var docEl = doc.documentElement,
+          resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+          recalc = function () {
+          　　var clientWidth = docEl.clientWidth;
+          　　if (!clientWidth) return;
+          　　if(!clientWidth>640){
+          　　　　docEl.style.fontSize = 10 +'px';
+          　　}else{
+          　　　　docEl.style.fontSize = 10* (clientWidth / 640) + 'px';
+          　　};
+          　　docEl.style.fontSize = 100* (clientWidth / 750) + 'px';
+          };
+          if(!doc.addEventListener) return;
+          win.addEventListener(resizeEvt, recalc, false);
+          recalc();
+          // doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document,window) ;
+    </script>      
+    <style>
+      html,body{
+        padding: 0;
+        margin: 0;
+      }
+      .loading-container{
+        padding: 2.5rem 1.1rem 0 1.1rem;
+      }
+      .loading-container>.bg{
+        width: 100%;
+      }
+      .loading-container>.text{
+        padding-top: .5rem;
+        color: #000;
+        font-size: .24rem;
+        letter-spacing: .02rem;
+      }  
+      .loading-container>.text.text2{
+        padding-top: .4rem;
+        padding-bottom: .4rem;
+      }    
+      .loading-container .contact{
+        width: 1.67rem;
+        height: .44rem;
+      }
+    </style>
+</head>
+  <body>
+      <div class="loading-container">
+        <img class="bg" src="./img/contactimg.png" alt="">
+        <div class="text">
+          抱歉，为了更好的用户体验，服务器正在维护升级，给大家带来不便，敬请谅解！
+        </div>
+        <div class="text text2 time">
+            
+        </div>
+        <a class="kefu" href="">
+          <img class="contact" src="./img/contactus.png" alt="">
+        </a>
+        
+      </div>
+      <script>
+        document.querySelector('.time').innerHTML="维护时间至："+JSON.parse(localStorage.siteConfig).close.timeEnd;
+        let service=JSON.parse(localStorage.siteConfig).service;
+        if(service[0]){
+          document.querySelector('.kefu').setAttribute('href',service[0].url);          
+        }                      
+      </script>
+  </body>
+</html>

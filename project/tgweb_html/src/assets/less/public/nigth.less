@@ -1,0 +1,1496 @@
+.night(@main-color:#5C89E6 ,@main-brder-color:#5C89E6){
+	
+    .bg-color{
+      background: #111216 !important;
+			color: #fff !important ;
+    }
+		.bg-color-active{
+			background: #5C89E6 !important;
+      color:#FFFFFF !important;
+		}
+   
+    .text-color{
+        color:#5C89E6 !important;
+
+     }
+
+  @header-height: 0.88rem;
+  @main-lottery-border-color: 1px solid rgba(44, 57, 76, 1);
+  @main-lottery-border-color2: 1px solid rgba(44, 57, 76, 1);
+  // 动画类名
+  @main-time: .3s;
+  .keyframes(@start,@end) {
+    @keyframes animateOut {
+      0% {
+        transform: translate3d(@start, 0, 0);
+      }
+      100% {
+        transform: translate3d(@end, 0, 0);
+      }
+    }
+  }
+  .animation(@n,@t,@fn,@i,@dur) {
+    animation: @n @t @fn @i @dur;
+    -webkit-animation: @n @t @fn @i @dur;
+    -o-animation: @n @t @fn @i @dur;
+    -moz-animation: @n @t @fn @i @dur;
+  }
+
+  //   lottery.less
+  .hall-container-header {
+    width: 100%;
+    height: .70rem;
+    padding-top: 0;
+    .van-tabs__wrap {
+      height: .70rem;
+    }
+    .van-tabs__nav--line {
+      padding-bottom: 0;
+      padding-left: .2rem;
+      background: #1C1E2A;
+      .van-tabs__line {
+        background: @main-color;
+        bottom: 0;
+      }
+    }
+    .van-tabs__wrap--scrollable, .van-tab {
+      flex: 0;
+      min-width: auto;
+      font-size: .32rem;
+      background: #1C1E2A;
+      span {
+        // width: 1.27rem;
+        padding: 0 .12rem;
+        height: .70rem;
+        line-height: .70rem;
+        border-radius: .27rem;
+      }
+    }
+    .van-tab--active {
+      color: @main-brder-color;
+    }
+    &.luZhuTitle {
+      height: .75rem;
+      .van-tabs__wrap {
+        height: .75rem;
+        line-height: .75rem;
+      }
+
+      .van-tabs__wrap--scrollable, .van-tab {
+        font-size: .32rem;
+        flex: 1;
+        span {
+          padding: 0 .12rem;
+          height: .75rem;
+          line-height: .75rem;
+          color: #617089;
+        }
+      }
+      .van-tabs__line {
+        height: 2px;
+        // display: none;
+      }
+      [class*=van-hairline]::after {
+        border: 0;
+      }
+      .van-tabs__nav--line {
+        padding-left: 0;
+      }
+    }
+    &.heXiao-van {
+      .van-tabs__wrap--scrollable, .van-tab {
+        span {
+          color: #617089;
+        }
+      }
+    }
+    &.dianZi {
+      .van-tab {
+        font-size: .28rem;
+      }
+    }
+    .van-hairline--top-bottom::after {
+      border: 1px solid rgba(44, 57, 76, 1) !important;
+    }
+  }
+
+
+  //彩票页导航
+  .betArea-pubicNav {
+    height: .8rem;
+    .van-tabs--line .van-tabs__wrap {
+      height: .8rem;
+    }
+    .van-tabs__nav--line {
+      padding-bottom: 0;
+      padding-left: .16rem;
+      .van-tabs__line {
+        display: none;
+      }
+    }
+    .van-tabs__wrap--scrollable .van-tab {
+      flex: 0;
+      min-width: auto;
+      display: flex;
+      align-items: center;
+      font-size: .32rem;
+      line-height: .5rem;
+      padding: 0;
+      span {
+        padding: 0;
+        width: auto;
+        height: .64rem;
+        padding-left: .24rem;
+        padding-right: .24rem;
+        line-height: .64rem;
+        border-radius: .48rem;
+      }
+    }
+    .van-tab--active {
+      span {
+        color: #fff;
+        background: @main-color;
+      }
+
+    }
+    [class*=van-hairline]::after {
+      border: 0;
+    }
+    &.triangle {
+      .top {
+        z-index: 2;
+        position: relative;
+        width: 100%;
+        display: flex;
+        border-bottom: 1px solid rgba(44, 57, 76, 1);
+        .triangle-van {
+          padding-top: 0;
+          width: 88%;
+        }
+        .ico {
+          cursor: pointer;
+          height: .8rem;
+          width: 12%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #1C1E2A;
+          div {
+            width: 0;
+            height: 0;
+            border-left: .13rem solid transparent;
+            border-right: .13rem solid transparent;
+            border-top: .19rem solid @main-brder-color;
+            &.active {
+              border-top: 0;
+              border-bottom: .19rem solid @main-brder-color;
+            }
+          }
+        }
+      }
+    }
+    &.pcDdZhuShi {
+      .van-tab {
+        height: 0.8rem;
+        flex: 0;
+        min-width: auto;
+        padding: .08rem 0 0 0;
+        font-size: .32rem;
+        line-height: .64rem;
+        span {
+          // width: 1.27rem;
+          padding: 0 .23rem;
+          height: 0.64rem;
+          line-height: .64rem;
+          border-radius: .48rem;
+        }
+      }
+      .van-ellipsis {
+        height: 0.64rem;
+        line-height: .64rem;
+        border-radius: .27rem;
+      }
+    }
+  }
+
+  //传统彩票封盘
+  .lottery-close-mask {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .1);
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+  }
+  .closeFix {
+    position: absolute;
+    z-index: 99;
+    left: 50%;
+    margin-left: -.9rem;
+    top: 58%;
+    display: inline-block;
+    width: 1.8rem;
+    height: 1.00rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: .44rem;
+    line-height: 1.00rem;
+    border-radius: .10rem;
+    text-align: center;
+  }
+  //滚动垫片1
+  .lottery-gasket {
+    height: 1.88rem;
+    width: 100%;
+  }
+  .lottery-gasket-liuhe {
+    height: 1.88rem;
+    width: 100%;
+  }
+  //滚动垫片2
+  .lottery-left-nav-gasket {
+    height: .88rem;
+    width: 100%;
+  }
+  //大厅
+  .hall-gasket {
+    height: .9rem;
+  }
+
+  //全局选择框
+  
+	//所有电子游艺样式
+  .game-out-wrap {
+		@bg-color: #111216 !important;
+		@night-color: #1C1E2A !important;
+		
+		.game-type{
+			background-color: @night-color;
+			padding: 0 !important;
+			
+			.van-tab span{
+				color: #DBDFEA !important;
+			}
+			.van-tab.van-tab--active span{
+				color: #5C89E6 !important;
+			}
+		}
+		
+		.game-list{
+			background-color: @bg-color;
+			
+			.jiangchi {
+				background-color: @night-color;
+				.jackpot {
+					background-color: @bg-color;
+				}
+			}
+			.slot-game-list{
+				background-color: @bg-color;
+				.startgame{
+					background:  @text-color4;
+					color: @text-color;
+					border-color:  @text-color4;
+				}
+			}
+		}
+		
+	}
+
+
+  //所有彩票样式
+  .container {
+    // padding-top: 0.88rem;
+    -moz-transition: all @main-time ease-out 0s;
+    -webkit-transition: all @main-time ease-out 0s;
+    -o-transition: all @main-time ease-out 0s;
+    transition: all @main-time ease-out 0s;
+   
+    //  &.active{
+    //     transform: translate3d(200px,0,0);
+    //  }
+    .betArea-decial-box {
+      position: relative;
+      .lottery-cont {
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        position: static;
+        overflow-y: scroll;
+        .list-tap {
+          display: flex;
+          height: .7rem;
+          background: #1C1E2A;
+          div {
+            flex: 1;
+            font-size: .3rem;
+            color: #617089;
+            line-height: .7rem;
+            height: .7rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(44, 57, 76, 1);
+            &.active {
+              border-bottom: 2px solid @main-brder-color;
+              color: @main-brder-color;
+            }
+          }
+        }
+        .wrap {
+          position: relative;
+          .list {
+            .lottery-title {
+              color: #617089;
+              font-size: .32rem;
+              background: #111216;
+              line-height: .7rem;
+              height: .7rem;
+              padding-left: .2rem;
+            }
+            .lottery-ul {
+              width: 100%;
+              padding: .22rem 0;
+              padding-bottom: 0;
+              background: #1C1E2A;
+              //    border-top: 1px solid @main-lottery-border-color;
+              border-bottom: 1px solid rgba(44, 57, 76, 1) !important;
+              .lottery-item {
+                text-align: center;
+                display: inline-block;
+                width: 20%;
+                min-width: 20%;
+                max-width: 20%;
+                margin-bottom: .22rem;
+                // height: 1.62rem;
+                .ball {
+                  width: .84rem;
+                  height: .84rem;
+                  border-radius: 50%;
+                  text-align: center;
+                  line-height: .84rem;
+                  border: none;
+                  background: #4B4E61;
+                  color: #DCDFF0;
+                  font-size: .34rem;
+                  margin: 0 auto;
+                  &.active {
+                    background: @main-color;
+                    border: 0;
+                    // border:1px solid @main-brder-color;
+                    color: #fff;
+                  }
+                }
+                .odd {
+                  font-size: .3rem;
+                  color: #617089;
+                  padding-top: .2rem;
+                  &.active {
+                    color: @main-brder-color;
+                  }
+                }
+              }
+              //已用
+              .threeSquare {
+                width: 33.3333%;
+                min-width: 33.3333%;
+                max-width: 33.3333%;
+                div.ball {
+                  width: 1.9rem;
+                  height: .96rem;
+                  border-radius: .1rem;
+                  font-size: .34rem;
+                }
+              }
+              //已用
+              .fourSquare {
+                width: 25%;
+                min-width: 25%;
+                max-width: 25%;
+                div.ball {
+                  width: 1.25rem;
+                  height: .76rem;
+                  line-height: .76rem;
+                  border-radius: .1rem;
+                  font-size: .34rem;
+                }
+              }
+              //已用
+              .fiveSquare {
+                width: 20%;
+                min-width: 20%;
+                max-width: 20%;
+                div.ball {
+                  width: 1rem;
+                  height: .76rem;
+                  line-height: .76rem;
+                  border-radius: .1rem;
+                  font-size: .34rem;
+                }
+              }
+              //已用
+              .sixSquare {
+                width: 16.66%;
+                min-width: 16.66%;
+                max-width: 16.66%;
+                div.ball {
+                  width: 1rem;
+                  height: .76rem;
+                  line-height: .76rem;
+                  border-radius: .1rem;
+                  font-size: .34rem;
+                }
+              }
+              //没用
+              .fourCircle {
+                width: 25%;
+                min-width: 25%;
+                max-width: 25%;
+                div.ball {
+                  width: .84rem;
+                  height: .84rem;
+                  border-radius: 50%;
+                  text-align: center;
+                  line-height: .84rem;
+                  font-size: .34rem;
+                }
+              }
+              //没用
+              .fiveCircle {
+                width: 20%;
+                min-width: 20%;
+                max-width: 20%;
+                div.ball {
+                  width: .84rem;
+                  height: .84rem;
+                  border-radius: 50%;
+                  text-align: center;
+                  line-height: .84rem;
+                  font-size: .30rem;
+                }
+              }
+              //没用
+              .sixCircle {
+                width: 16.66%;
+                min-width: 16.66%;
+                max-width: 16.66%;
+                div.ball {
+                  width: .84rem;
+                  height: .84rem;
+                  border-radius: 50%;
+                  text-align: center;
+                  line-height: .84rem;
+                  font-size: .30rem;
+                }
+              }
+              //快捷
+              .kuaijie {
+                width: 20%;
+                min-width: 20%;
+                max-width: 20%;
+                div.ball {
+                  width: 1.3rem;
+                  height: .6rem;
+                  border-radius: .1rem;
+                  line-height: .6rem;
+                  border-radius: .27rem;
+                  font-size: .30rem;
+                }
+              }
+            }
+            &:last-child {
+              .lottery-ul {
+                border-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //横向滚动
+  .horizontal-scroll-list-wrap {
+    position: relative;
+    .cube-scroll-content {
+      display: inline-block;
+      .list-wrapper {
+        display: flex;
+        white-space: nowrap;
+        background: #1C1E2A;
+        .list-item {
+          display: inline-block;
+        }
+        .cube-scroll-lianMa-item {
+          padding: 0.1rem .18rem;
+          text-align: center;
+          font-size: .26rem;
+          color: #617089;
+          &.active {
+            border-bottom: 2px solid @main-brder-color;
+          }
+          &.lianWei {
+            padding: 0.1rem .25rem;
+          }
+        }
+      }
+    }
+  }
+
+  .mine();
+  .lottery()
+}
+
+
+
+// 个人中心
+.mine() {
+  @bg-color: #111216 !important;
+  @night-color: #1C1E2A !important;
+  @text-color: #DBDFEA !important;
+  @text-color2: #919DB7 !important;
+  @text-color3: #617087 !important;
+  @text-color4: #5C89E6 !important;
+  @border-bottom: 1px solid rgba(44, 57, 76, 1) !important;
+  .personal-index, .personal {
+		height: 100%;
+    background: @bg-color;
+    input::-webkit-input-placeholder {
+      color: #888888 !important;
+      font-size: .28rem !important;
+    }
+    .row {
+      position: relative;
+      &::before {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background: #2C394C;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+      &:last-child {
+        &::before {
+          height: 0;
+        }
+      }
+    }
+  }
+
+  .mine {
+    // background: @bg-color;
+    span, p, h2, i {
+      color: @text-color;
+    }
+		i.innerText{
+			color: #000 !important;
+		}
+    .text-color {
+      color: #5C89E6 !important;
+    }
+    .balance-view{
+      background: @bg-color;
+    }
+    .balance-user-item,.balance-item {
+      background: @night-color;
+      .user-banlance {
+        color: @text-color;
+      }
+      .user-money {
+        color: #ff0000 !important;
+      }
+    }
+    .functionList {
+      background: @night-color;
+      .row-text {
+        color: @text-color2;
+      }
+      .h5-icon-next {
+        color: #ADAFBB !important;
+      }
+    }
+  }
+
+  .footer {
+    background: rgba(39, 39, 47, 1) !important;
+    border: 1px solid rgba(44, 57, 76, 1) !important;
+    i, p {
+      color: #666 !important;
+    }
+    .text-color {
+      color:  @text-color4;
+    }
+  }
+	
+  .personal-content {
+		.vant-wrapper{
+			height: 1.1rem !important;
+		}
+    background: @bg-color;
+		h2{
+			color:  @text-color;
+		}
+		div p,div.warmPrompt{
+			color: #617089 !important;
+		}
+		
+		.bank-info,.pay-info,.safety-view ,.up-mibao,.new-mibao{
+			background: @night-color;
+				
+			.row {
+				border-bottom: none!important;
+				
+				label{
+					color: @text-color;
+				}
+				input{
+					background: @night-color;
+					color: #617087 !important;
+				}
+				input::-webkit-input-placeholder{
+					color:#617087 !important;
+				}
+				input:-ms-input-placeholder{
+					color: #617087!important;
+				}
+				input::moz-placeholder{
+					color:#617087 !important;
+				}
+			
+				.cube-select {
+					background: rgba(0,0,0,0);
+					color:#617087 !important;
+					.cube-select-text{
+						color:#617087 !important;
+					}
+				}
+				
+				span,span.spanActive{
+					color: #617087 !important;
+				}
+			} 
+		}
+  }
+	
+  .personal-nav{
+		background: @night-color;
+		.nav span{
+			color: #919DB7 !important;
+		}
+		.nav span.bg-color-active{
+			color: #ffffff !important;
+		}
+	}
+	
+  //  存款
+  .pay-list {
+    .van-cell-group {
+      background: @night-color;
+      .van-cell {
+        background: @night-color;
+        border-bottom: @border-bottom;
+        .van-cell__title span:not(.van-cell__label) {
+          color: @text-color;
+        }
+        .van-cell__label {
+          color: @text-color3;
+        }
+        .van-cell__right-icon {
+          color: @text-color;
+        }
+        &:last-child {
+          border-bottom: none !important;
+        }
+      }
+    }
+  }
+
+  // 取款
+  .get-money {
+    .balance, .bank-card, .withdraw, .pas-row {
+      background: @night-color;
+      border-bottom: @border-bottom;
+    }
+    .balance {
+      border-bottom: none !important;
+      label {
+        color: @text-color3;
+      }
+      .color {
+        color: @text-color4;
+      }
+      .gray {
+        color: @text-color3;
+      }
+    }
+    .bank-card {
+      span {
+        color: @text-color3;
+      }
+      i {
+        color: @text-color;
+      }
+    }
+    .withdraw {
+      .icon {
+        background-image: url('../../../assets/img/public/image/common/personal/userIndex/money.png') !important;
+      }
+      .van-cell input {
+        background: @night-color;
+        color: @text-color3;
+        &::-webkit-input-placeholder {
+          color: #CCCCCC !important;
+        }
+      }
+    }
+    .pas-row {
+      border-bottom: none !important;
+      label {
+        color: @text-color;
+      }
+      .van-cell {
+        background: @night-color;
+        input {
+          background: @night-color;
+          color: @text-color;
+          &::-webkit-input-placeholder {
+            color: @text-color3;
+          }
+        }
+      }
+    }
+    .no-balance {
+      border-bottom: @border-bottom;
+      label {
+        color: @text-color;
+      }
+    }
+  }
+  .submitGetMoney {
+    background: @text-color4;
+  }
+
+  // 消息中心
+  .message-index {
+    nav {
+      background: @night-color;
+      a.active {
+        color: @text-color4;
+        &::after {
+          position: absolute;
+          content: "";
+          bottom: -0.25rem;
+          left: 50%;
+          transform: translate(-50%);
+          width: 1.5rem;
+          height: 2px;
+          background: @text-color4;
+        }
+      }
+    }
+    .message-content {
+      textarea {
+        background: @night-color;
+        color: @text-color;
+        &::-webkit-input-placeholder {
+          color: @text-color3;
+        }
+      }
+      .submit {
+        background: @text-color4;
+      }
+    }
+  }
+
+}
+
+
+.lottery() {
+  @bg-color: #111216 !important;
+  @night-color: #1C1E2A !important;
+  @text-color: #DBDFEA !important;
+  @text-color2: #919DB7 !important;
+  @text-color3: #617089 !important;
+  @border-bottom: 1px solid rgba(44, 57, 76, 1) !important;
+
+  .main-wrap {
+    background: @bg-color;
+  }
+
+
+  // 开奖结果
+  .result-outSide-wrap {
+    .wrap {
+      background: @night-color;
+    }
+    .text-color {
+      color: #E64544 !important;
+    }
+    .lottery-result {
+      border-bottom: @border-bottom;
+    }
+    .right {
+      .lottery-result-center span {
+        background: #E64544 !important;
+        color: #fff;
+      }
+      div:last-child span {
+        background: #4B4E61 !important;
+        border-radius: 10px;
+        color: #DCDFF0 !important;
+        border: none !important;
+      }
+      .liuhecaiStyle .add {
+        background: #fff !important;
+      }
+    }
+    .left {
+      div {
+        color: #617089 !important;
+      }
+    }
+    .lottery-timer-left {
+      color: #617089 !important;
+    }
+    .lottery-timer-center .tip {
+      color: #617089 !important;
+    }
+    .container-lottery-timer {
+      border-bottom: @border-bottom;
+    }
+    .wrap-bot {
+      background: @night-color;
+      .addColor, .issue {
+        color: @text-color3;
+      }
+    }
+  }
+
+  // 导航栏
+  .betArea-pubicNav {
+    .van-tabs__nav {
+      background: @night-color;
+      .van-tab {
+        background: @night-color;
+        color: @text-color3;
+      }
+    }
+    [class*=van-hairline]::after {
+      border: @border-bottom;
+    }
+  }
+  .triangle {
+    .bottom .bottom-nav-box ul {
+      background: @night-color;
+      li .item {
+        border: @border-bottom;
+        color: @text-color3;
+        &.active {
+          background: #5C89E6 !important;
+          border: none !important;
+          color: @text-color;
+        }
+      }
+    }
+  }
+
+  // 六合彩
+  .container .betArea-decial-box .lottery-cont .wrap .list .lottery-ul.one-to-six .ball {
+    color: @text-color;
+  }
+  .container .betArea-decial-box .lottery-cont .wrap .list:nth-child(2) .lottery-ul .lottery-item .ballTe {
+    color: @text-color;
+  }
+
+  // 快3
+  .result-outSide-wrap {
+    .wrap-bot .lottery-result-bot {
+      .left-bot {
+        border-right: @border-bottom;
+        border-bottom: @border-bottom;
+      }
+      .right-bot {
+        border-bottom: @border-bottom;
+      }
+    }
+  }
+
+  .container .betArea-decial-box .lottery-cont .wrap .list {
+    .dianShuTitle {
+      background: @night-color;
+      color:  @text-color3;
+    }
+    .lottery-ul-dianShu {
+      background: @night-color;
+      .lottery-li-dianShu {
+        border-left: @border-bottom;
+        border-top: @border-bottom;
+        .ball div:first-child {
+          color: @text-color;
+        }
+        .ball div:last-child {
+          color: #64646B !important;
+        }
+        &:nth-child(n+17) {
+          border-bottom: @border-bottom;
+        }
+        &:nth-child(4n) {
+          border-right: @border-bottom;
+        }
+        &.bg-color-active {
+          background: #5C89E6 !important;
+          .ball div{
+            color: @text-color;
+          }
+        
+        }
+      }
+    }
+
+    .lottery-ul-sanTong {
+      background: @night-color;
+      .lottery-li-sanTong {
+        border-left: @border-bottom;
+        border-top: @border-bottom;
+        &:nth-child(n+4) {
+          border-bottom: @border-bottom;
+        }
+        &:nth-child(3n) {
+          border-right: @border-bottom;
+        }
+        .ball div:first-child {
+          color: @text-color;
+        }
+        .ball div:last-child {
+          color: #64646B !important;
+        }
+        &.bg-color-active{
+          background: #5C89E6 !important;
+          .ball div:last-child {
+            color: @text-color;
+          }
+        }
+      }
+      &.sTTongXuan {
+        .lottery-li-sanTong {
+          border-right: @border-bottom;
+          border-bottom: @border-bottom;
+        }
+      }
+    }
+
+    .lottery-ul-sanBuTong {
+      background: @night-color;
+      .lottery-li-sanBuTong {
+        border-left: @border-bottom;
+        border-top: @border-bottom;
+        &:nth-child(3n) {
+          border-right: @border-bottom;
+        }
+        &:nth-child(18) {
+          border-bottom: none !important;
+        }
+        &:nth-child(19) {
+          border-bottom: @border-bottom;
+          border-right: @border-bottom;
+        }
+        &:nth-child(17) {
+          border-right: @border-bottom;
+        }
+        &:last-child {
+          border-bottom: @border-bottom;
+          border-right: @border-bottom;
+        }
+        .ball div:first-child {
+          color: @text-color;
+        }
+        .ball div:last-child {
+          color: #64646B !important;
+        }
+        &.bg-color-active {
+          background: #5C89E6 !important;
+          .ball div:last-child {
+            color: @text-color;
+          }
+        }
+      }
+      .sTTongXuan {
+        .lottery-li-sanTong {
+          border-right: @border-bottom;
+          border-bottom: @border-bottom;
+        }
+      }
+    }
+
+  }
+
+  // 露珠
+  .vp-luzhu-wrap {
+    .header {
+      border-top: none !important;
+      border-bottom: none !important;
+      background: @night-color;
+      .item {
+        color: @text-color;
+        &.active {
+          background: transparent !important;
+          span {
+            &::after {
+              border-top: .19rem solid #E64544 !important;
+            }
+          }
+        }
+      }
+      .el {
+        border-left: @border-bottom;
+      }
+      .text-color {
+        color: #E64544 !important;
+      }
+    }
+    .cont {
+      .nav {
+        .van-tabs__line {
+          background: #E64544 !important;
+        }
+      }
+      .horizontal-scroll-list-wrap {
+        border-top: @border-bottom;
+      }
+      .zhangLong-ul .zhangLong-li {
+        border-bottom: @border-bottom;
+      }
+    }
+    .list-wrapper .list-item div {
+      border-right: @border-bottom;
+      border-bottom: @border-bottom;
+    }
+  }
+
+  // 下注金额
+  .betArea-decial-choose-cont {
+    .sel-box {
+      background: @night-color;
+      border-bottom: @border-bottom;
+      border-top: none !important;
+      .left {
+        color: @text-color;
+        .text-color {
+          color: #E64544 !important;
+        }
+      }
+    }
+  }
+  .betArea-decial-choose-money {
+    .input-wrap {
+      background: @bg-color;
+      .text {
+        color: @text-color3;
+      }
+      .input {
+        .van-cell {
+          border: none !important;
+          background: #4B4E61 !important;
+          input {
+            background: #4B4E61 !important;
+            color: #919DB7 !important;
+            &::-webkit-input-placeholder {
+              color: @text-color;
+            }
+          }
+          &:not(:last-child)::after {
+            border: none !important;
+          }
+        }
+      }
+      .totle {
+        .text-color {
+          color: #E64544 !important;
+        }
+      }
+      .sure {
+        background: #E64544 !important;
+      }
+    }
+  }
+
+  
+    // 下注确认框
+    .submit-content{
+      background: @night-color;
+      .submit-title{
+          background: @night-color;
+          border-bottom: @border-bottom;
+          .text{
+            color: #5C89E6 !important;
+            .fr{
+              color: @text-color3;
+            }
+          }
+      }
+      .submit-total-box{
+          background: #222431 !important;
+          color: #64646B !important;
+          .text-color{
+            color: #E64544 !important;
+          }
+      }
+      .submit-list{
+        .item{
+          border-bottom: @border-bottom;
+          span,.center{
+            color: @text-color3;
+          }
+          .text-color{
+            color: #E64544 !important;
+          }
+        }
+      }
+      .submit-btn span:first-child{
+        background: #4B4E61 !important;
+        color: @text-color;
+      }
+      .submit-btn .bg-color{
+        background: #E64544 !important;
+        color: @text-color;
+      }
+  }
+		
+		/* 代理中心 */ 
+   
+		.agency-index{
+			.Income-Details{
+				background: @night-color;
+				.left span{
+					color:#DBDFEA !important;
+					span{
+						color:#5176C5!important;
+					}
+				}
+				.right span{
+					color:#5C6A80!important;
+				}
+			}
+			.agency-content{
+				background: @night-color;
+				.row{
+					background: @night-color;
+					p.nth-p {
+						color: @text-color;
+					}
+					p.last-p{
+						color:#5C6A80!important;
+					}
+				}
+			}
+		} 
+		/* 代理中心 下级人数 */
+		.personal-content{
+			.number-title{
+				background: @night-color;
+				.nav span{
+					color: #909CB6 !important;
+				}
+				.nav span.bg-color-active{
+					color: #ffffff !important;
+				}
+			} 
+			.content-title{
+				background: @night-color;
+				span{
+					color:#617089 !important;
+				}
+			}
+			.content-view {
+				background: @night-color;
+				.row span,.row span p{
+					color:#919DB7 !important;
+				}
+			}
+			
+		}
+		/* 银行信息 */
+		.bank-account .noSet-bank .setbank{
+			background: @night-color;
+			p{
+				color: @text-color3;
+			}
+		}
+		
+		
+		/* 银行卡 银行状态 */
+		.set-bank{
+			.attention{
+				>p:first-child{
+					color: @text-color4;
+				}
+				div p{
+					color: #617089 !important;
+				}
+			}
+		} 
+		
+		/* 存款 银行转账 */
+		.personal-content{
+			.off-line{
+				.course{
+					background: @night-color;
+					p:nth-child(1),h3{
+						color: #617089 !important;
+					}
+					.pay-course{
+						background: #DBDFEA !important;
+						border: none !important;
+					}
+					.border-color{
+						background:#5C89E6 !important;
+						color: @text-color;
+					}
+				}
+				
+			}
+			
+			/* 存款 支付宝扫码 */
+			.van-tabs--line .van-tabs__wrap{
+				.van-tabs__nav--line{
+					background: @night-color;
+					padding-bottom: 0 !important;
+					.van-tabs__line{
+						background-color:#3C81DE !important ;
+						bottom: 0 !important;
+					}
+				}
+				.van-tab{
+					background: @night-color;
+				}
+				.van-tab.van-tab--active .tab-title span{
+					color:#3C81DE !important;
+				}
+				.van-tab .tab-title span{
+					color: #617089 !important;
+				}
+				
+			}
+		  
+			/* 支付宝线上 */
+			.on-line{
+				background: @night-color;
+				.recharge{
+					background: @night-color;
+					div{
+						color:  @text-color;
+						border-color: #2c394c !important;
+						input{
+							background: rgba(0,0,0,0);
+							color:#919DB7 !important;
+						}
+						input::-webkit-input-placeholder{
+							color: #919DB7 !important;
+						}
+						input:-ms-input-placeholder{
+							color: #919DB7 !important;
+						}
+						input::moz-placeholder{
+							color: #919DB7 !important;
+						} 
+					}
+					p{
+						color:  @text-color;
+						border-color: #2C394C !important;
+					}
+					ul li{
+						color:@text-color;
+						background-color: #4B4E61!important ;
+						border-color: #4B4E61!important  ;
+					}
+				}
+				div.on-line-height:nth-child(1){
+					height:0 !important;
+				}
+				div.on-line-height{
+					background:#121213 !important;
+				}
+			} 
+		
+		} 
+		
+		/* 存款 支付宝扫码 */
+		.personal-content{
+			.codeBox{
+				background: @night-color;
+				.qrBt{
+					background-color: #4B4E61 !important;
+					color: #5C89E6 !important;
+					border-color:#5C89E6 !important;
+				}
+			}
+			.inputBox{
+				background: @night-color;
+				.inpItem{
+					border-color:#2C394C !important; ;
+					.cube-input {
+						background: @night-color;
+						.cube-input-field{
+							background: rgba(0,0,0,0);
+							color:#617089 !important;
+						}
+						.cube-input-field::-webkit-input-placeholder{
+							color:#617089 !important;
+						}
+						.cube-input-field:-ms-input-placeholder{
+							color:#617089 !important;
+						}
+						.cube-input-field::moz-placeholder{
+							color: #617089 !important;
+						}
+					}
+					label{
+						color: @text-color;
+					}
+				}
+			}
+		}
+		 
+	
+	
+		
+		
+	/* 个人资料 设置 */
+	.personal-content{
+		.set-list,.infoSetList{
+			background: @night-color;
+			.portrait{
+				border-color:  #2C394C !important;
+				.fr{
+					color: #617089 !important;
+				}
+			}
+			.row{
+				color: @text-color;
+				.fr ,.fr span{
+					color: #617089 !important;
+				}
+			}
+			
+		}
+		.portraitImg{
+			background: @night-color;
+		}
+	} 
+  
+	/* 设置邮箱 */
+  .set-info{
+		background-color: #111216 !important;
+		.inputVal{
+			.van-cell-group{
+				.van-cell{
+					background: @night-color;
+					.van-field__control{
+						background: @night-color;
+						color: #5F8FF2 !important;
+					}
+				} 
+				
+			} 
+			span i{
+				background: #5F8FF2  !important;
+				color: #111216 !important;
+			}
+		} 
+		p{
+			color: #617089 !important;
+		}
+		.header .right{
+			color: #617089 !important;
+		}
+	}
+	.van-hairline--top-bottom::after{
+		border-color: #111216 !important;
+	}
+  /* 安全问题*/
+	.safety .safety-content {
+		nav{
+			background: @night-color;
+			a.active{
+				color:#19A0F1 !important ;
+			}
+			a{
+				color:#617089 !important ;
+			}
+		}
+		.up-mibao p{
+			background-color: #121212 !important ;
+			color: #909CB6 !important;
+		}
+		
+		
+	}
+	
+  
+	/* 游戏记录 */ /* 帐变记录 */
+  .game-record ,.traninf-record{
+		.record-list{
+			.van-tab{
+				background: @night-color;
+				span{
+					color:#617089 !important;
+				}
+			}
+			.van-tab.van-tab--active{
+				span{
+					color: #5C89E6 !important;
+				}
+			}
+			.van-tabs__line{
+				background-color: #5C89E6 !important ;
+				bottom: 0 !important;
+			}
+		}
+		
+		.game-title{
+			background: @night-color;
+			span{
+				color:#919DB7 !important;
+			}
+		}
+		.game-view{
+			background: @night-color;
+			span,span p{
+				color:@text-color;
+			}
+		}
+		.other-total{
+			background:#1C1E2A !important;
+			border-top: 1px solid #2C394C;
+			z-index: 99;
+			
+			div span:nth-child(1){
+				color:#8E9AB4 !important;
+			}
+		}
+	}
+	
+
+
+/* 所有的按钮样式统一 蓝色 */
+.home .loginout .logout-text , .saveBox .wrap .payBtn ,
+.set-bank .sumbitBank , .deposit-form .off-line .bank-info .row a,
+.deposit-form .off-line .payBtn,.deposit-form .on-line .payBtn ,  .safety .submitBt,
+.honest .honest-index .submit{
+	background:  @text-color4;
+	color: @text-color;
+	border-color:  @text-color4;
+}
+
+
+.header{
+	background-color: #1C1E2A !important;
+	color: @text-color;
+}
+	
+	
+}
+
+
+

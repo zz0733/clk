@@ -1,0 +1,525 @@
+@import "./var.less";
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    height: 100%;
+    width:100%;
+    background: #f6f6f8;
+    // touch-action: none;
+    // overflow: hidden;
+    // overflow: hidden;
+    // position:fixed;
+    // touch-action: none;
+    font-family: Arial, "Microsoft YaHei", sans-serif;
+    font-size: 16px;
+   
+}
+
+div,
+span,
+iframe,
+section,
+aside,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+table,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+canvas,
+footer,
+header,
+menu,
+nav,
+audio,
+video,
+input {
+    font-family: PingFang SC, STHeitiSC-Light, Helvetica-Light, arial, sans-serif !important;
+    box-sizing: border-box;
+}
+
+.cube-popup_mask {
+    z-index: 1999 !important;
+}
+
+//全部动画动画
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity .5s;
+}
+
+.fade-enter,
+.fade-leave-to
+/* .fade-leave-active below version 2.1.8 */
+
+    {
+    opacity: 0;
+}
+
+
+
+// 辅助class
+.clearfloat:after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.van-toast--default {
+    // min-width: 120px;
+    // min-height: 120px;
+    padding: 5px;
+    text-align: center;
+}
+
+.van-toast--default .van-toast__icon {
+    font-size: 35px;
+}
+
+.van-toast--default .van-toast__text {
+    font-size: 12px;
+    padding-top: 10px;
+}
+
+// 全局弹框
+.van-modal {
+    background-color: rgba(0, 0, 0, .4);
+}
+
+.cube-picker {
+    position: absolute;
+}
+
+
+.van-toast--default .van-toast__text {
+    font-size: 14px;
+}
+
+// 公告
+.van-dialog__message--withtitle {
+    text-align: justify;
+}
+
+.mh5-back {
+    width: .5rem;
+    height: .88rem;
+    background: url('../../../assets/img/public/image/common/m-left.png') left center no-repeat;
+    background-size: 40% auto;
+}
+
+.ios-picker {
+//   position: fixed;
+//   top: 0;
+//   width: 100%; 
+  
+  .cube-popup-content {
+    position: fixed !important;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow: hidden;
+    pointer-events:auto;
+  }
+  .cube-picker{
+    position: fixed !important;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow: hidden;
+    pointer-events:auto;
+  }
+  .cube-popup-mask{
+    position: fixed !important;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow: hidden;
+    pointer-events:auto;
+  }
+  .cube-popup-container{
+    position: fixed !important;
+    .cube-popup-content{
+      position: fixed !important;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      overflow: hidden;
+      pointer-events:auto;
+    }
+
+  }
+  #gametypes{
+    position: fixed !important;
+  }
+  #background{
+    position: fixed !important;
+  }
+  .page-content {
+    .header{
+      position: fixed !important;
+    }
+    .game-out-wrap{
+      position: fixed !important;
+    }
+  }
+}
+
+
+//登录框公公样式
+.login-public-css {
+    background: #fff;
+  .back-login{
+    position: absolute;
+    top: .10rem;
+    left: .30rem;
+    height: .36rem;
+    width: .2rem;
+    padding: .20rem; 
+    z-index: 999;  
+    font-size: .32rem;
+    color: #666;    
+  }
+  .container-login {
+      height: 92%;
+      padding: 0 0.5rem;
+      position: relative;
+      .logo-bg {
+          display: block;
+          width: 3rem;
+          padding: 1rem 0;
+          padding-bottom: .4rem;
+          margin: 0 auto;
+      }
+      .row {
+          border-bottom: 0.02rem solid #f5f5f5;
+          padding: 0.05rem 0;
+          position: relative;
+          .box {
+              zoom: 1;
+              overflow: hidden;
+              display: flex;
+              align-items: center;
+              .img {
+                  float: left;
+                //   width: 6%;
+                  vertical-align: middle;
+                  i {
+                    //   width: .35rem;
+                    font-size: 18px;
+                  }
+              }
+              .cube-input {
+                  float: left;
+                  font-size: 0.32rem;
+                  &::after {
+                      border: 1px solid #fff;
+                  }
+                  .cube-input-field {
+                      width: 6rem;
+                      // padding: .10rem;
+                      font-size: 0.32rem;
+                      padding-left: 0.2rem;
+                      // text-indent: .1rem;
+                      // color:#000;
+                      color: #666;
+                      // font-family: 'Microsoft YaHei' !important;
+                      font-weight: 400;
+                      // user-select: text;
+                  }
+              } // padding: .23rem 0;
+              // input {
+              //   // height: 0.8rem;
+              //   // padding-top: 30px;
+              //   // line-height: 0.8rem;
+              //   vertical-align: middle;
+              //   font-size: 0.3rem;
+              //   line-height: .34rem;
+              //   padding-left: 0.1rem;
+              //   width: 5rem;
+              //   // font-weight: 600;
+              // }
+          }
+          .codeImg {
+              position: absolute;
+              display: inline-block;
+              right: 0.2rem;
+              top: .17rem;
+              width: 1.8rem;
+              height: 0.6rem;
+              background-repeat: no-repeat;
+          }
+      }
+      .bar {
+          height: 1.2rem;
+          line-height: 1.2rem;
+          width: 100%;
+          span {
+              font-size: 0.3rem;
+              color: #888;
+              position: relative; //  font-weight: 600;
+              width: 36%;
+              .cube-switch {
+                  position: absolute;
+                  top: 0.3rem;
+                  right: .1rem;
+                  .cube-switch-input {
+                      width: 0.96rem;
+                      height: 0.56rem;
+                  }
+                  .cube-switch-ui {
+                      width: 0.96rem;
+                      height: 0.56rem;
+                      // &::after{
+                      //   width: .46rem;
+                      // }
+                  }
+                 
+                  .cube-switch-label {
+                      width: .42rem;
+                  }
+                  .cube-switch-label:empty {
+                      margin-left: -0.5rem;
+                  }
+              }
+              .jizhu {
+                  margin-right: 0.1rem;
+              }
+          }
+      }
+      .submit-wrap {
+          // margin-top: 0.3rem;
+          display: flex;
+          justify-content: center;
+          cursor: pointer;
+          .submitBt {
+            background: @main-color;
+            width: 100%; // margin: 0.14rem;
+            border-radius: 0.15rem;
+            height: 0.88rem;
+            line-height: 0.88rem;
+            color: #fff;
+            text-align: center;
+            font-size: 0.36rem;
+            cursor: pointer;
+            font-weight: 0;
+            &.active {
+              background: linear-gradient(180deg, #ccc, #eee);
+            }              
+          }
+      }
+      .go-register {
+          text-align: center;
+          margin-top: 0.5rem;
+          font-size: 0.3rem;
+          color: #888; //  font-weight: 600;
+          span {
+              color: #f60;
+              text-decoration: underline;
+          }
+      }
+  }
+  .bg-img {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 20%;
+  }
+}
+
+.register-public-css {
+    background: #fff;
+  .back-login{
+    position: absolute;
+    top: .10rem;
+    left: .30rem;
+    height: .36rem;
+    width: .2rem;  
+    padding: .20rem;  
+    z-index: 999; 
+    font-size: .32rem;
+    color: #666;
+  }
+  height: 100%;
+  .bg-img {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 20%;
+  }
+  .container-register {
+      padding: 0 0.48rem; // height: 100%;
+      .logo-bg {
+        display: block;
+        width: 3rem;
+        padding: 1rem 0;
+        padding-bottom: .4rem;
+        margin: 0 auto;
+      }
+      .row {
+          border-bottom: 0.02rem solid #f5f5f5;
+          padding: 0.13rem 0;
+          // height: 0.96rem;
+          position: relative;
+          .box {
+              zoom: 1;
+              overflow: hidden;
+              display: flex;
+              align-items: center;
+              // justify-content: center;
+              //  line-height: 0.96rem;
+              .img {
+                  float: left;
+                //   width: 6%;
+                  vertical-align: middle;
+                  i {
+                    //   width: .35rem;
+                    font-size: 18px;
+                  }
+              }
+              .cube-input {
+                  float: left;
+                  font-size: 0.3rem;
+                  &::after {
+                      border: 1px solid #fff;
+                  }
+                  .cube-input-field {
+                      width: 6rem;
+                      padding: .10rem;
+                      font-size: 0.32rem;
+                      padding-left: 0.2rem;
+                      color: #999;
+                      // text-indent: .1rem;
+                  }
+              } // padding: .23rem 0;
+              // input {
+              //   // height: 0.8rem;
+              //   // padding-top: 30px;
+              //   // line-height: 0.8rem;
+              //   vertical-align: middle;
+              //   font-size: 0.3rem;
+              //   line-height: .34rem;
+              //   padding-left: 0.1rem;
+              //   width: 5rem;
+              //   // font-weight: 600;
+              // }
+          }
+          .codeImg {
+              position: absolute;
+              display: inline-block;
+              right: 0.2rem;
+              top: .17rem;
+              width: 1.8rem;
+              height: 0.6rem;
+              background-repeat: no-repeat;
+          }
+      }
+      .submit-wrap {
+          margin-top: 0.5rem;
+          display: flex;
+          justify-content: center;
+          .submitBt {
+            background: @main-color;
+            width: 100%; // margin: 0.14rem;
+            border-radius: 0.15rem;
+            height: 0.88rem;
+            line-height: 0.88rem;
+            color: #fff;
+            text-align: center;
+            font-size: 0.36rem;
+            font-weight: 0;
+            &.active {
+              background: linear-gradient(180deg, #ccc, #eee);
+            }                
+          }
+      }
+      .go-register {
+          text-align: center;
+          margin-top: 0.5rem;
+          font-size: 0.30rem;
+          color: #888; // font-weight: 600;
+          // z-index: 20;
+          span {
+              color: #f60;
+              text-decoration: underline;
+          }
+      }
+  }
+}
+
+.van-toast{
+  line-height: .48rem;
+  &.van-toast--text{
+    font-size: .32rem;
+    padding: .36rem .48rem;    
+    max-width: 6rem;
+    min-width: auto;
+    line-height: .48rem;
+    word-break:normal;
+    div{
+      text-align: justify;
+      // white-space: nowrap;
+    }
+  }
+}
+.van-toast--default{
+  width:auto;
+  height:auto;
+  min-width: 1.88rem;
+  min-height: 1.88rem;
+  padding: .3rem .3rem;
+  .van-toast__text{
+    font-size: .32rem;
+  }
+}
+
+   // 滚动插件
+   .mescroll-empty{
+    background: #f6f6f8 !important;
+    padding-top: 1.6rem !important;
+     .empty-icon{
+         width: 100% !important;
+     }
+     .empty-tip{
+        margin-top: .75rem !important;
+        font-size: .28rem !important;
+        color: #777777 !important;
+     }
+}
