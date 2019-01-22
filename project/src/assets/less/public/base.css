@@ -1,0 +1,425 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body,
+html {
+  height: 100%;
+  touch-action: none;
+  overflow: hidden;
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+}
+div,
+span,
+iframe,
+section,
+aside,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+table,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+canvas,
+footer,
+header,
+menu,
+nav,
+audio,
+video,
+input {
+  font-family: PingFang SC, STHeitiSC-Light, Helvetica-Light, arial, sans-serif !important;
+  box-sizing: border-box;
+}
+.cube-popup_mask {
+  z-index: 1999 !important;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+.cube-picker-confirm,
+.cube-picker-cancel {
+  font-size: 15px;
+  color: #ff5100;
+}
+.clearfloat:after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.van-toast--default {
+  padding: 5px;
+  text-align: center;
+}
+.van-toast--default .van-toast__icon {
+  font-size: 35px;
+}
+.van-toast--default .van-toast__text {
+  font-size: 12px;
+  padding-top: 10px;
+}
+.van-modal {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.cube-picker {
+  position: absolute;
+}
+.van-toast--default .van-toast__text {
+  font-size: 14px;
+}
+.van-dialog__message--withtitle {
+  text-align: justify;
+}
+.mh5-back {
+  width: .5rem;
+  height: .88rem;
+  background: url('../../../assets/img/public/image/common/m-left.png') left center no-repeat;
+  background-size: 50% auto;
+}
+.ios-picker {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.ios-picker .cube-popup-content {
+  position: fixed !important;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
+  pointer-events: auto;
+}
+.ios-picker .cube-picker {
+  position: fixed !important;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
+  pointer-events: auto;
+}
+.ios-picker .cube-popup-mask {
+  position: fixed !important;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
+  pointer-events: auto;
+}
+.ios-picker .cube-popup-container {
+  position: fixed !important;
+}
+.ios-picker .cube-popup-container .cube-popup-content {
+  position: fixed !important;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
+  pointer-events: auto;
+}
+.ios-picker #gametypes {
+  position: fixed !important;
+}
+.ios-picker #background {
+  position: fixed !important;
+}
+.ios-picker .page-content .header {
+  position: fixed !important;
+}
+.ios-picker .page-content .game-out-wrap {
+  position: fixed !important;
+}
+.login-public-css .back-login {
+  position: absolute;
+  top: .10rem;
+  left: .30rem;
+  height: .36rem;
+  width: .2rem;
+  padding: .20rem;
+  z-index: 999;
+  font-size: .32rem;
+  color: #666;
+}
+.login-public-css .container-login {
+  height: 92%;
+  padding: 0 0.5rem;
+  position: relative;
+}
+.login-public-css .container-login .logo-bg {
+  display: block;
+  margin: 1rem auto;
+  width: 3rem;
+  margin-bottom: .4rem;
+}
+.login-public-css .container-login .row {
+  border-bottom: 0.02rem solid #f5f5f5;
+  padding: 0.05rem 0;
+  position: relative;
+}
+.login-public-css .container-login .row .box {
+  zoom: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.login-public-css .container-login .row .box .img {
+  float: left;
+  width: 6%;
+  vertical-align: middle;
+}
+.login-public-css .container-login .row .box .img img {
+  width: .35rem;
+}
+.login-public-css .container-login .row .box .cube-input {
+  float: left;
+  font-size: 0.32rem;
+}
+.login-public-css .container-login .row .box .cube-input::after {
+  border: 1px solid #fff;
+}
+.login-public-css .container-login .row .box .cube-input .cube-input-field {
+  width: 6rem;
+  font-size: 0.32rem;
+  padding-left: 0.2rem;
+  color: #666;
+  font-weight: 400;
+}
+.login-public-css .container-login .row .codeImg {
+  position: absolute;
+  display: inline-block;
+  right: 0.2rem;
+  top: .17rem;
+  width: 1.8rem;
+  height: 0.6rem;
+  background-repeat: no-repeat;
+}
+.login-public-css .container-login .bar {
+  height: 1.2rem;
+  line-height: 1.2rem;
+  width: 100%;
+}
+.login-public-css .container-login .bar span {
+  font-size: 0.3rem;
+  color: #888;
+  position: relative;
+  width: 36%;
+}
+.login-public-css .container-login .bar span .cube-switch {
+  position: absolute;
+  top: 0.3rem;
+  right: .1rem;
+}
+.login-public-css .container-login .bar span .cube-switch .cube-switch-input {
+  width: 0.96rem;
+  height: 0.56rem;
+}
+.login-public-css .container-login .bar span .cube-switch .cube-switch-ui {
+  width: 0.96rem;
+  height: 0.56rem;
+}
+.login-public-css .container-login .bar span .cube-switch .cube-switch-label {
+  width: .42rem;
+}
+.login-public-css .container-login .bar span .cube-switch .cube-switch-label:empty {
+  margin-left: -0.5rem;
+}
+.login-public-css .container-login .bar span .jizhu {
+  margin-right: 0.1rem;
+}
+.login-public-css .container-login .submit-wrap {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.login-public-css .container-login .submit-wrap .submitBt {
+  background: linear-gradient(90deg, #ff8e00, #ff5100);
+  width: 100%;
+  border-radius: 0.15rem;
+  height: 0.88rem;
+  line-height: 0.88rem;
+  color: #fff;
+  text-align: center;
+  font-size: 0.36rem;
+  cursor: pointer;
+  font-weight: 0;
+}
+.login-public-css .container-login .submit-wrap .submitBt.active {
+  background: linear-gradient(180deg, #ccc, #eee);
+}
+.login-public-css .container-login .go-register {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.3rem;
+  color: #888;
+}
+.login-public-css .container-login .go-register span {
+  color: #f60;
+  text-decoration: underline;
+}
+.login-public-css .bg-img {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 20%;
+}
+.register-public-css {
+  height: 100%;
+}
+.register-public-css .back-login {
+  position: absolute;
+  top: .10rem;
+  left: .30rem;
+  height: .36rem;
+  width: .2rem;
+  padding: .20rem;
+  z-index: 999;
+  font-size: .32rem;
+  color: #666;
+}
+.register-public-css .bg-img {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 20%;
+}
+.register-public-css .container-register {
+  padding: 0 0.48rem;
+}
+.register-public-css .container-register .logo-bg {
+  display: block;
+  margin: 1rem auto;
+  width: 3rem;
+  margin-bottom: 0.4rem;
+}
+.register-public-css .container-register .row {
+  border-bottom: 0.02rem solid #f5f5f5;
+  padding: 0.13rem 0;
+  position: relative;
+}
+.register-public-css .container-register .row .box {
+  zoom: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.register-public-css .container-register .row .box .img {
+  float: left;
+  width: 6%;
+  vertical-align: middle;
+}
+.register-public-css .container-register .row .box .img img {
+  width: .35rem;
+}
+.register-public-css .container-register .row .box .cube-input {
+  float: left;
+  font-size: 0.3rem;
+}
+.register-public-css .container-register .row .box .cube-input::after {
+  border: 1px solid #fff;
+}
+.register-public-css .container-register .row .box .cube-input .cube-input-field {
+  width: 6rem;
+  padding: .10rem;
+  font-size: 0.32rem;
+  padding-left: 0.2rem;
+  color: #999;
+}
+.register-public-css .container-register .row .codeImg {
+  position: absolute;
+  display: inline-block;
+  right: 0.2rem;
+  top: .17rem;
+  width: 1.8rem;
+  height: 0.6rem;
+  background-repeat: no-repeat;
+}
+.register-public-css .container-register .submit-wrap {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+.register-public-css .container-register .submit-wrap .submitBt {
+  background: linear-gradient(90deg, #ff8e00, #ff5100);
+  width: 100%;
+  border-radius: 0.15rem;
+  height: 0.88rem;
+  line-height: 0.88rem;
+  color: #fff;
+  text-align: center;
+  font-size: 0.36rem;
+  font-weight: 0;
+}
+.register-public-css .container-register .submit-wrap .submitBt.active {
+  background: linear-gradient(180deg, #ccc, #eee);
+}
+.register-public-css .container-register .go-register {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.30rem;
+  color: #888;
+}
+.register-public-css .container-register .go-register span {
+  color: #f60;
+  text-decoration: underline;
+}
+.van-toast {
+  line-height: .48rem;
+}
+.van-toast.van-toast--text {
+  font-size: .32rem;
+  padding: .36rem .48rem;
+  max-width: 6rem;
+  min-width: auto;
+  line-height: .48rem;
+  word-break: normal;
+}
+.van-toast.van-toast--text div {
+  text-align: justify;
+}
+.van-toast--default {
+  width: auto;
+  height: auto;
+  min-width: 1.88rem;
+  min-height: 1.88rem;
+  padding: .3rem .3rem;
+}
+.van-toast--default .van-toast__text {
+  font-size: .32rem;
+}

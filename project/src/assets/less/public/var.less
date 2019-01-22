@@ -1,0 +1,41 @@
+//彩票区start 正常
+// 导航类
+@header-height:0.88rem;
+// 渐变背景颜色
+@main-color:linear-gradient(90deg, #ff8e00,#ff5100);
+// brder颜色
+@main-brder-color:#ff5100;
+
+//彩票页
+@main-lottery-border-color:rgba(241,241,241,.6);
+@main-lottery-border-color2:rgba(241,241,241,.6);
+
+//彩票区end
+
+// 动画类名
+@main-time:.3s;
+.keyframes(@start,@end,) { 
+    @keyframes animateOut {
+      0% {transform: translate3d(@start,0,0);}
+      100%{transform: translate3d(@end, 0, 0);}
+    }
+
+   
+}
+.animation(@n,@t,@fn,@i,@dur){
+    animation: @n @t @fn @i @dur;
+    -webkit-animation: @n @t @fn @i @dur;
+    -o-animation: @n @t @fn @i @dur;
+    -moz-animation: @n @t @fn @i @dur;
+}
+
+
+ 
+
+
+
+
+
+
+
+

@@ -1,0 +1,74 @@
+// 全局修改 didi下拉框icon样式
+.cube-select::before{
+  content: "\E609";
+  position: absolute;
+  top: .2rem;
+  right: .2rem;
+  font-family: cube-icon!important;
+    font-size: 100%;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: .004rem;
+    font-size: .3rem;
+    color: #666;
+}
+
+.cube-select-icon{
+  display: none;
+}
+// 修改密保问题 didi下拉框icon
+.safety-problem{
+  .cube-select::before{
+  top: 0;
+  }
+}
+
+// 选择框
+.van-picker__cancel, .van-picker__confirm{
+  color: #f60;
+  padding: 0 .3rem;
+  font-size: .3rem;
+}
+
+.van-picker__toolbar{
+  height: .8rem;
+  line-height: .8rem;
+}
+
+// 单选框
+.cube-radio{
+  border: none !important;
+}
+.cube-radio-group[data-horz="true"] .cube-radio:after {
+  border:none;
+}
+.van-dialog{
+  border-radius: 10px;
+  button{
+    .van-button__text{
+      color: #f60;
+    }
+  }
+}
+.van-dialog__header{
+  border-bottom: 1px solid #f5f5f5;
+  padding: 15px 0;
+  // font-weight: 600;
+}
+.van-dialog__content::after {
+   border-bottom-width: 0;
+}
+.van-dialog__message--withtitle{
+  text-align: center;
+  color: #333;
+}
+
+.van-dialog__confirm{
+  color: #2d8cf0;
+  background: #f8f8f8;
+}
+
+// 返回
+.mh5-back{
+  font-size: .66rem;
+}
